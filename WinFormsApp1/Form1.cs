@@ -17,7 +17,7 @@ namespace WinFormsApp1
                 new Question()
                 {
                     Text = "Як спіймати тигра в клітку?",
-                    Answer = "Next",
+                    Answer = "Далі",
                     Status = false
                 },
                 new Question()
@@ -75,7 +75,7 @@ namespace WinFormsApp1
                     Status = false
                 },
             };
-            QuestionLabel.Text = "Напишіть і натисніть 'Next' для початку тесту";
+            QuestionLabel.Text = "Напишіть 'Далі' і натисніть 'Next' для початку тесту";
         }
         private void DisplayCurrentQuestion()
         {
