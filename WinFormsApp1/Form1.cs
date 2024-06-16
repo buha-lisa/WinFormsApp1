@@ -1,5 +1,3 @@
-using System.Windows.Forms;
-
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
@@ -109,6 +107,7 @@ namespace WinFormsApp1
                         currentQuestion.Status = false;
                     }
 
+                    currentQuestion.UsersAnswers = AnswerBox.Text;
                     AnswerBox.Clear();
                     _currentIndex++;
                     DisplayCurrentQuestion();
@@ -125,15 +124,22 @@ namespace WinFormsApp1
             this.Close();
         }
 
-        private void Expansion_btn_Click(object sender, EventArgs e)
+        private string answerFilter()
         {
-            foreach(var question in _questions)
+            string message = "";
+            foreach (var question in _questions)
             {
                 if (question.Status == false)
                 {
-                    MessageBox.Show($"На питання '{question.Text}' правильна відповідь була '{question.Answer}'");
+                    message += $"На питання '{question.Text}' ваша відповідь - '{question.UsersAnswers}' - була хибна\n";
                 }
             }
+            return message;
+        }
+
+        private void Expansion_btn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{answerFilter()}");
         }
     }
 }

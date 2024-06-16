@@ -7,5 +7,7 @@
         public string Answer { get; set; }
 
         public bool Status { get; set; }
+
+        public string UsersAnswers { get; set; }
     }
 }
