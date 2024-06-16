@@ -33,6 +33,7 @@
             QuestionLabel = new Label();
             AnswerBox = new TextBox();
             Finish_btn = new Button();
+            Expansion_btn = new Button();
             SuspendLayout();
             // 
             // Next_btn
@@ -85,11 +86,23 @@
             Finish_btn.UseVisualStyleBackColor = true;
             Finish_btn.Click += Finish_btn_Click;
             // 
+            // Expansion_btn
+            // 
+            Expansion_btn.Location = new Point(372, 228);
+            Expansion_btn.Name = "Expansion_btn";
+            Expansion_btn.Size = new Size(94, 29);
+            Expansion_btn.TabIndex = 7;
+            Expansion_btn.Text = "Expansion";
+            Expansion_btn.UseVisualStyleBackColor = true;
+            Expansion_btn.Visible = false;
+            Expansion_btn.Click += Expansion_btn_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(776, 379);
+            Controls.Add(Expansion_btn);
             Controls.Add(Finish_btn);
             Controls.Add(AnswerBox);
             Controls.Add(QuestionLabel);
@@ -108,5 +121,6 @@
         private Label QuestionLabel;
         private TextBox AnswerBox;
         private Button Finish_btn;
+        private Button Expansion_btn;
     }
 }

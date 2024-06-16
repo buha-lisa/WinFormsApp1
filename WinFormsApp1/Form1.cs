@@ -87,6 +87,7 @@ namespace WinFormsApp1
             else
             {
                 MessageBox.Show($"Ви відповіли правильно на {_rightAnswer} з {_questions.Count} питань.");
+                Expansion_btn.Visible = true;
             }
         }
 
@@ -122,6 +123,17 @@ namespace WinFormsApp1
         private void Finish_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Expansion_btn_Click(object sender, EventArgs e)
+        {
+            foreach(var question in _questions)
+            {
+                if (question.Status == false)
+                {
+                    MessageBox.Show($"На питання '{question.Text}' правильна відповідь була '{question.Answer}'");
+                }
+            }
         }
     }
 }
